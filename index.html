@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verioax</title>
+  <meta name="description" content="Check suspicious messages, links, documents and Android apps for scams. Personal data is removed first.">
+  <meta name="theme-color" content="#0B1220">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png">
+  <style>
+    html, body { margin: 0; height: 100%; background: #0B1220; color: #E6EDF7; font-family: system-ui, sans-serif; }
+    iframe { border: 0; width: 100%; height: 100%; display: block; }
+    #loading { position: fixed; inset: 0; display: grid; place-items: center; text-align: center; padding: 24px; }
+    #loading p { color: #94A3B8; max-width: 36ch; }
+    a { color: #38BDF8; }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <div>
+      <img src="icons/icon-192.png" width="96" height="96" alt="">
+      <h1>Verioax</h1>
+      <p>Starting up... If this takes more than a minute, the server is waking up. Please wait.</p>
+      <p><a href="privacy.html">Privacy policy</a></p>
+    </div>
+  </div>
+  <!-- CHANGE THIS ADDRESS to your own Streamlit app -->
+  <iframe src="https://verioax.streamlit.app/?embed=true" title="Verioax" allow="clipboard-write"
+          onload="document.getElementById('loading').style.display='none'"></iframe>
+  <script>
+    if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
+  </script>
+</body>
+</html>
